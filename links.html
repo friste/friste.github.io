@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links - Friste</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      color: #dc2222;
+    }
+    body {
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      background-color: #030309;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+      text-align: left;
+      position: relative;
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+      }
+      .ascii-art {
+        font-size: 0.15rem;
+        overflow-x: hidden;
+      }
+      .arp-table {
+        font-size: 0.9em;
+      }
+      .arp-table td {
+        padding: 0.3em;
+      }
+    }
+    .terminal {
+      font-family: 'Fira Code', monospace;
+      margin-bottom: 20px;
+    }
+    .command {
+      display: flex;
+      align-items: center;
+    }
+    .prompt {
+      margin-right: 10px;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .prompt.fade-out {
+      opacity: 0;
+    }
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1em;
+      background-color: #dc2222;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+    .result {
+      margin-top: 5px;
+    }
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .description {
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .misc-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+    .misc-link {
+      font-family: 'Fira Code', monospace;
+      background: #181818;
+      border-radius: 5px;
+      padding: 14px 18px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      border: 1px solid #232323;
+      display: block;
+      word-break: break-word;
+    }
+    .misc-link:hover {
+      background: #23233a;
+    }
+    .back-link {
+      margin-top: 2em;
+    }
+    .back-link a {
+      text-decoration: none;
+      transition: opacity 0.2s;
+      font-family: 'Fira Code', monospace;
+    }
+    .back-link a:hover {
+      opacity: 0.7;
+    }
+    .ascii-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ascii-art {
+  font-family: 'Arial', sans-serif;
+  white-space: pre;
+  font-size: 0.2rem;
+  line-height: 1.2;
+  line-height: 1;
+  padding: 1em;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+
+.category {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: 'Fira Code', monospace;
+}
+.arp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2em;
+      font-family: 'Fira Code', monospace;
+    }
+    .arp-table th {
+      text-align: left;
+      padding: 0.5em;
+      border-bottom: 1px solid #dc2222;
+      font-weight: normal;
+    }
+    .arp-table td {
+      padding: 0.5em;
+      border-bottom: 1px solid rgba(41, 45, 255, 0.2);
+    }
+    .arp-table tr:hover td {
+      background-color: rgba(41, 45, 255, 0.1);
+    }
+    .arp-table a {
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .arp-table a:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="terminal">
+      <div class="command">
+        <span class="prompt" id="prompt">$</span>arp -a<span class="cursor"></span>
+      </div>
+    </div>
+    <div class="ascii-container" aria-hidden="true">
+        <pre class="ascii-art"><code>
+  
+  
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                             ░░                                        ░▒▒▒▓▓                                              
+                                                           ▒▒▒▒██▒                                  ░▒▒▒▒▒▒▓                                               
+                                                           ▒▒▒░░░▓██▒                             ░░▒▒▒▒▓▓▒                                                
+                                                           ░▒▒▒▒▒░░░▓▓▒░                        ░▒▒▒▒▒▓▒░                                                  
+                                                           ░░▒▒▒▒▒▒░░░▒▓▒▒░░                  ░▒▒▒▒▒▒░░                                                    
+                                                            ▒▒▒▒▒▒▒▒▒▒░░░▒▒▒░░              ░▒▒▓▓▒▓▒░                                                      
+                                                             ▒▒▒▒▒▒▒▒▒▒░░░░▓▒▒░░           ░▒▒▒▒▒▒▒░░                                                      
+                                                             ░░▒▒▒▒▒▒▒▒▒▒░░▒▒▓▒▒▒         ░▒▒▒▒▒▒▒░░░                                                      
+                                                              ▒▒▒▒▒▒▒▒▒▒▒▒░░▒▓▓▓▒▒       ░▒▒▒▒▒▒▒░░░                                                       
+                                                               ▒▒░▒▒▒▒▒▓▓▒░░░▒▒▓▓▒▒░    ░▒▒▒▓▓▓▒▒░░░                                                       
+                                                               ░▒▒▒▒▒▒▓▓▓▓▒░░▒▒▓▒▒▒▒▒░░░▒▓▒▓▒▓▓▒░░░░                                                       
+                                                                ░▒▒▒▒▒▒▓██▒░░▒▒▒▒▓▒▓▒▒▒▓▓▒▓▓▒▒▒▒▒░░                                                        
+                                                                  ░▒▒▒▒▒▓▓▓▒▒▒▒▓▓▓▒▓▓▒▒▒▒▓▓▓▓▒▒▒▒░░                                                        
+                                                                   ░░▒▒▒▒▓▓░▒▒▒▓▓▓▓▓▒▓▓▓▒▒▒▓▒▒▒▒▒▒░                                                        
+                                                                     ░░▒░▒▒▒░▒▓▓▒▒▒▒▒▓▒▒▒▓▒▒▒▓▓▓▒▒▒░░                                                      
+                                                                   ░░░▒▒▒▒▒▒▒▓▓▒▒▒▒▒▒▓▒▒▓▒▓▒▓▒▓▓▒▒▒▒░                                                      
+                                                        ░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒▒▒░░▒▒▓▒▒▒▒▒▓▒▒▒▒▒▒░                                                     
+                                                      ░▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒▓▓▓▓▓▓▓▒▒▒░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                                                    
+                                                   ░▒▒▒▒▒▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓█▓▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒░                                                    
+                                                 ░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓████░░▒▒▒▓▒▓▒▒▒▓▒▒░░                                                   
+                                               ░▒▒▒▓▓▒▓▓▓▓▒▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▓▒▓▒▓▓▓▒▒█████░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░                                                  
+                                              ▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▓▓▒▒▓▓▒▒▒▒▒▓▒▒▒▒▓████▒▒▒░▒▒▒▒▓▒▒▒▒▒▒░░                                                  
+                                            ░▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓▒▓▓▓▓█▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒▒░░                                                  
+                                           ░▒▒▓▓▓▒▓▓▓▓▓▓▓▒▒▓▓▓▓▓▒▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒▓▒▒▒▒▒▒▒░▒▒▒▒▒▒▒░░░                                                  
+                                          ▒▒▓▓▓▓▓▒▓▓▓▓▓▓▓▒▒▓▒▒▒▓▒▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒░░▒▒▒▒▒▒▓▓▓▓▒▒▒░░                                                 
+                                        ░▒▓▓▒▓▓▓▒▒▓▓▒▒▓▓▓▓▒▓▒▒▓▒▒▒▒▒▓▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒░░                                                
+                                       ░▒▒▓▓▓▓▓▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒░░░░                                                
+                                       ▒▒▓▓▓▓▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒▒▒▒▒▒░▒▒░▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▓▒░▒▓▒▒▒░░░░░░                                                
+                                      ▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▓▒▒▒▒▒▓▒▓▒░░▒▒░░░░░░                                                 
+                                     ░▓▓▒▓▓▒▓▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒▒▓▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒░                                                 
+                                     ▒▒▓▓▒▓▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒▓▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒▒▒▒▒░░▒▒░░░░░░░░░░░░░░░                                                  
+                                    ░▒▒▒▒▓▒▒▒▒▒▒▒▒▒▒▓▒▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒░░░░░▒░▒░░░░░░░░                                                  
+                                    ▒▒▒▒▒▒▓▓▓▒▒▒▓▒▒▒▒▒▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒░▒▒▒░▒░▒░░░░░░░░░░░░░░░░░                                                  
+                                   ░▒▒▒▒▓▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒░▒░░░▒░░░░░░░░░░░░░░░                                                   
+                                  ░▒▒▒▒▒▓▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒▒▒░▒░▒▒░░░░░░░░░░░░░░                                                    
+                                  ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░░░░▒░░░░░░░░░░░░░░░░░                                                     
+                                  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▓▒▒▒▒░░░░░░░░░░░░░░░░░░░░                                                     
+                                  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▓▓▒▒▒▒▒▒▒▒▓▒▒▓▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░                                                      
+                                 ░▒▒▒▒▒▒▒░▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒▒▒░▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░                                                      
+                                 ░▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▒▒▒▒░▒▒░░▒▒▒▒▒▒░░▒▒░░░░░░░░░░░░░░░░                                                        
+                                 ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒▒░░░░░░░░░░▒░▒░░░░░░░░░░░░░░░░░                                                         
+                                 ░▒▒▒░▒▒▒░░░▒▒░░▒░░▒▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▒░░░░▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░                                                          
+                                 ░▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒▓▓▓▒▒▒▒▓▒▒░░░▒▒░░░░░░░░░░░▒░░░░░                                                          
+                                 ░░▒▒▒▒░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒░░░░░░░░░▒▒▒▒▒▒░░                                                         
+                                 ░░▒▒▒▒▒▒▒▒░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓█▓█▓▓▒▓▓▒▒▒▒░░░░▒▒▒▒▒▓▒▒▒▒░░░                                                         
+                                  ░▒▒▒▒▓▓▒▒▒▒▒▒▒▒▒▒▒▒▓▒▓▓▓▓▓▓▒▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▒░░░░░▒▓▓▒▓▓▓▒▒▒░░░░░░                                                        
+                                   ░░▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓████▓▓▓▓▒▒▒▓▓█▓▓▓▒▒░░  ░░░░█▓▓▓▓▓▒▒░░░░░░░░░                                                      
+                                 ░░░░░░░░▒█▓▓▒▒▓▓▓▒▒▒░▒▒▓▓██████▓▓▓▓▓▓▓▓▓▒▒░░    ░░████▓▓▓▒░░▒░░░░░░▒░░░                                                   
+                                ░░░░░░░░▒▓▓▓▒▓▓▓▓▒▒▒▒░░▒▓▒▓████████▓▒▒▒▒░░░       ░██████▓▒▒▒░░░░░▒░░░░░                                                   
+                                   ░░░░░▒▒▒▒▒▓▓▒▓░░░░░░░▒▓▓█▓███████▓▒▒░░          ▒▒▒▓▓█▓▓▒▒▒░░░▒░░░░░░░                                                  
+                                       ░░░▒▓▒░░▒▒░░░░░░▒▒▒▒▒▓▓▓▓▓▓▓▒░▓▒         ░   ░     ░░░░░░░░░░░                                                      
+                                             ░░░░░░░░▒▒░░░░░░░░░░░▒░░░░░  ░   ░░░░ ░░                                                                      
+                                                                  ░░░░▒░░░░░░░░░▒░░░░                                                                      
+                                                                             ░░░                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+                                                                                                                                                           
+  
+  
+          
+        </code></pre>
+      </div>
+      <table class="arp-table">
+        <tbody>
+          <tr>
+            <td>github </td>
+            <td><a href="https://github.com/friste">github.com/friste</a></td>
+          </tr>
+          <tr>
+            <td>writing music for games</td>
+            <td><a href="https://friste.itch.io">friste.itch.io</a></td>
+          </tr>
+          <!-- <tr>
+            <td>traditional/digital art</td>
+            <td><a href="https://friste.github.io">/art</a></td>
+          </tr> -->
+        </tbody>
+      </table>
+
+    <div class="back-link">
+      <a href="index.html">← back</a>
+    </div>
+  </div>
+  <script>
+    const prompts = [
+      { text: '$', delay: 3000 },
+      { text: 'C:\\Users\\friste>', delay: 3000 },
+      { text: '%', delay: 3000 }
+    ];
+    let currentIndex = 0;
+    const promptElement = document.getElementById('prompt');
+    function rotatePrompt() {
+      promptElement.classList.add('fade-out');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % prompts.length;
+        promptElement.textContent = prompts[currentIndex].text;
+        promptElement.classList.remove('fade-out');
+        setTimeout(rotatePrompt, prompts[currentIndex].delay);
+      }, 300);
+    }
+    setTimeout(rotatePrompt, prompts[0].delay);
+  </script>
+</body>
+</html> 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email - Friste</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      background-color: #030308;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+      text-align: left;
+    }
+    .terminal {
+      font-family: 'Fira Code', monospace;
+      color: #cecece;
+      margin-bottom: 20px;
+    }
+    .command {
+      display: flex;
+      align-items: center;
+    }
+    .prompt {
+      color: #cecece;
+      margin-right: 10px;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .prompt.fade-out {
+      opacity: 0;
+    }
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1em;
+      background-color: #cecece;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+    .result {
+      margin-top: 5px;
+    }
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .email {
+      margin-bottom: 30px;
+      color: #888;
+    }
+    .back-link {
+      font-family: 'Fira Code', monospace;
+      margin-top: 30px;
+    }
+    a {
+      color: #cecece;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    a:hover {
+      opacity: 0.7;
+    }
+    code {
+      color: #cecece;
+      display: block;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="terminal">
+      <div class="command">
+        <span class="prompt" id="prompt">$</span> <span id="command-text">cat email.txt</span><span class="cursor"></span>
+      </div>
+      <div class="result"><a href="mailto:friste&#64;proton&#46;me">friste&#64;proton&#46;me</a></div>
+    </div>
+    <div class="back-link">
+      <a href="index.html">← back</a>
+    </div>
+  </div>
+
+  <script>
+    const promptCommands = [
+      { prompt: '$', command: 'cat email.txt', delay: 3000 },
+      { prompt: 'C:\\Users\\friste>', command: 'type email.txt', delay: 3000 },
+      { prompt: '%', command: 'cat email.txt', delay: 3000 }
+    ];
+    let currentIndex = 0;
+    const promptElement = document.getElementById('prompt');
+    const commandText = document.getElementById('command-text');
+
+    function rotatePrompt() {
+      promptElement.classList.add('fade-out');
+      commandText.classList.add('fade-out');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % promptCommands.length;
+        promptElement.textContent = promptCommands[currentIndex].prompt;
+        commandText.textContent = promptCommands[currentIndex].command;
+        promptElement.classList.remove('fade-out');
+        commandText.classList.remove('fade-out');
+        setTimeout(rotatePrompt, promptCommands[currentIndex].delay);
+      }, 300);
+    }
+    setTimeout(rotatePrompt, promptCommands[0].delay);
+  </script>
+</body>
+</html> 
