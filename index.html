@@ -11,7 +11,6 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      color: #3235d8;
     }
 
     
@@ -19,6 +18,7 @@
       font-family: 'Fira Code', monospace;
       font-size: 1rem;
       background-color: #030309;
+      color: #3235d8;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -47,9 +47,9 @@
     }
 
     .sliding-text-wrapper span {
-      color: #030309;
-      font-size: 1rem;
+      font-size: 1em;
       padding-right: 2em;
+      color: #030309 !important;
     }
 
     @keyframes scroll-left {
@@ -104,13 +104,15 @@
     a:hover {
       opacity: 0.7;
     }
+    a:visited {
+      color: #3235d8; 
+    }
+
     .description-wrapper {
       display: flex;
       gap: 1em;
       margin-bottom: 1em;
     }
-
-
     .description {
       line-height: 1.6;
       flex: 1;
